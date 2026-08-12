@@ -53,6 +53,20 @@ body {
   color: var(--text-2);
 }
 
+.admin-input {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--hairline);
+  border-radius: 2px;
+  color: var(--text);
+  font-size: 0.9rem;
+}
+
+.admin-input:focus {
+  outline: 1px solid var(--accent);
+}
+
 .hero-line {
   display: block;
   font-size: var(--t-hero);
