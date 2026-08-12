@@ -5,7 +5,7 @@ export default function Contact() {
   const { contact } = getSite();
 
   return (
-    <section id="contact" className="layer px-8 pb-24 pt-32 sm:px-14 sm:pb-28 sm:pt-44">
+    <section id="contact" className="layer scrim px-8 pb-24 pt-32 sm:px-14 sm:pb-28 sm:pt-44">
       <Reveal>
         <p className="label mb-3">{contact.eyebrow}</p>
         <h2

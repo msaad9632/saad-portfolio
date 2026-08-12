@@ -30,8 +30,18 @@ export default function MediaUploader() {
         <p className="label mb-4" style={{ color: "var(--text-3)" }}>
           Upload image
         </p>
-        <input type="file" name="file" accept="image/*" required className="admin-input mb-3" />
-        <input type="text" name="name" placeholder="File name (optional, e.g. dashboard)" className="admin-input mb-4" />
+        <label className="mb-3 block">
+          <span className="label mb-1 block" style={{ color: "var(--text-3)" }}>
+            Image file
+          </span>
+          <input type="file" name="file" accept="image/*" required className="admin-input" />
+        </label>
+        <label className="mb-4 block">
+          <span className="label mb-1 block" style={{ color: "var(--text-3)" }}>
+            File name (optional)
+          </span>
+          <input type="text" name="name" placeholder="e.g. dashboard" className="admin-input" />
+        </label>
         <div className="flex items-center gap-4">
           <button
             type="submit"

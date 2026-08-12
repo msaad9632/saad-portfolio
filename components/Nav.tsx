@@ -21,7 +21,7 @@ export default function Nav() {
             ["Experience", "#experience"],
             ["Contact", "#contact"],
           ].map(([label, href]) => (
-            <li key={href}>
+            <li key={href} className="hidden sm:block">
               <a href={href} className="label link-underline hover:!text-[var(--text)]">
                 {label}
               </a>

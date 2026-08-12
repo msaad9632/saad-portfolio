@@ -133,10 +133,10 @@ function AddEntryForm() {
       <p className="label mb-4" style={{ color: "var(--text-3)" }}>
         Add new entry
       </p>
-      <input name="when" placeholder="When" className="admin-input mb-3" />
-      <input name="what" placeholder="What" className="admin-input mb-3" />
-      <input name="where" placeholder="Where" className="admin-input mb-3" />
-      <textarea name="note" placeholder="Note" rows={2} className="admin-input mb-4" />
+      <input aria-label="When" name="when" placeholder="When" className="admin-input mb-3" />
+      <input aria-label="What" name="what" placeholder="What" className="admin-input mb-3" />
+      <input aria-label="Where" name="where" placeholder="Where" className="admin-input mb-3" />
+      <textarea aria-label="Note" name="note" placeholder="Note" rows={2} className="admin-input mb-4" />
       <div className="flex items-center gap-4">
         <button type="submit" className="label rounded-sm px-4 py-2" style={{ border: "1px solid var(--hairline)" }}>
           Add

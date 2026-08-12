@@ -5,7 +5,7 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="layer px-8 py-14 sm:px-14" style={{ borderTop: "1px solid var(--hairline)" }}>
+    <footer className="layer scrim px-8 py-14 sm:px-14" style={{ borderTop: "1px solid var(--hairline)" }}>
       <div className="mb-10 flex flex-wrap items-start justify-between gap-10">
         <div className="max-w-[24rem]">
           <a href="#top" className="label !text-[var(--text)] !tracking-[0.22em]">

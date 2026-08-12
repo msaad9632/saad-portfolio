@@ -81,7 +81,7 @@ export default async function GitHubActivity() {
           />
         </div>
 
-        {contributions && contributions.days.length > 0 && (
+        {contributions && contributions.days.length > 0 ? (
           <div
             className="mb-16 max-w-[52rem] overflow-x-auto rounded-sm p-5"
             style={{ border: "1px solid var(--hairline)", background: "rgba(255,255,255,0.015)" }}
@@ -109,6 +109,10 @@ export default async function GitHubActivity() {
               ))}
             </div>
           </div>
+        ) : (
+          <p className="mb-16 max-w-[42ch] text-[0.95rem] leading-relaxed" style={{ color: "var(--text-2)" }}>
+            Contribution graph is unavailable right now.
+          </p>
         )}
 
         {!repos || repos.length === 0 ? (

@@ -22,12 +22,12 @@ export default function AddProjectForm() {
       <p className="label mb-4" style={{ color: "var(--text-3)" }}>
         Add new project
       </p>
-      <input name="slug" placeholder="slug (e.g. my-project)" className="admin-input mb-3" required />
-      <input name="name" placeholder="Name" className="admin-input mb-3" />
-      <input name="role" placeholder="Role (e.g. Solo)" className="admin-input mb-3" />
-      <input name="oneLiner" placeholder="One-liner" className="admin-input mb-3" />
-      <textarea name="description" placeholder="Description" rows={3} className="admin-input mb-3" />
-      <input name="stack" placeholder="Stack (comma-separated)" className="admin-input mb-4" />
+      <input aria-label="Slug" name="slug" placeholder="slug (e.g. my-project)" className="admin-input mb-3" required />
+      <input aria-label="Name" name="name" placeholder="Name" className="admin-input mb-3" />
+      <input aria-label="Role" name="role" placeholder="Role (e.g. Solo)" className="admin-input mb-3" />
+      <input aria-label="One-liner" name="oneLiner" placeholder="One-liner" className="admin-input mb-3" />
+      <textarea aria-label="Description" name="description" placeholder="Description" rows={3} className="admin-input mb-3" />
+      <input aria-label="Stack" name="stack" placeholder="Stack (comma-separated)" className="admin-input mb-4" />
       <div className="flex items-center gap-4">
         <button type="submit" disabled={status === "saving"} className="label rounded-sm px-4 py-2" style={{ border: "1px solid var(--hairline)" }}>
           {status === "saving" ? "Adding…" : "Add project"}

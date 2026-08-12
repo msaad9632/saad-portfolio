@@ -26,8 +26,8 @@ export default function SkillsEditor({ skills }: { skills: Site["skills"] }) {
     <SaveForm title="Skills" action={saveSkills}>
       {rows.map((row) => (
         <div key={row.key} className="mb-3 flex items-center gap-2">
-          <input name="category" defaultValue={row.category} placeholder="category" className="admin-input w-32 shrink-0" />
-          <input name="items" defaultValue={row.items} placeholder="comma-separated items" className="admin-input" />
+          <input aria-label="Category" name="category" defaultValue={row.category} placeholder="category" className="admin-input w-32 shrink-0" />
+          <input aria-label="Items" name="items" defaultValue={row.items} placeholder="comma-separated items" className="admin-input" />
           <button
             type="button"
             onClick={() => removeRow(row.key)}
