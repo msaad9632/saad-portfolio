@@ -2,6 +2,7 @@ import { redirect } from "next/navigation";
 import { requireAdmin } from "@/lib/session";
 import { getProjects } from "@/lib/content";
 import ProjectForm from "./ProjectForm";
+import AddProjectForm from "./AddProjectForm";
 
 export default async function AdminProjects() {
   try {
@@ -18,9 +19,10 @@ export default async function AdminProjects() {
         Admin
       </p>
       <h1 className="mb-8 text-2xl font-semibold tracking-tight">Projects</h1>
-      {projects.map((p) => (
-        <ProjectForm key={p.slug} project={p} />
+      {projects.map((p, i) => (
+        <ProjectForm key={p.slug} project={p} index={i} total={projects.length} />
       ))}
+      <AddProjectForm />
     </div>
   );
 }

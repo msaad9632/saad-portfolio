@@ -15,12 +15,27 @@ export default async function AdminLayout({ children }: { children: React.ReactN
           className="flex items-center justify-between px-8 py-5"
           style={{ borderBottom: "1px solid var(--hairline)" }}
         >
-          <nav className="flex gap-6">
+          <nav className="flex flex-wrap gap-6">
             <Link href="/admin" className="label link-underline">
               Dashboard
             </Link>
             <Link href="/admin/projects" className="label link-underline">
               Projects
+            </Link>
+            <Link href="/admin/site" className="label link-underline">
+              Site copy
+            </Link>
+            <Link href="/admin/experience" className="label link-underline">
+              Experience
+            </Link>
+            <Link href="/admin/visual" className="label link-underline">
+              Hero visual
+            </Link>
+            <Link href="/admin/media" className="label link-underline">
+              Media
+            </Link>
+            <Link href="/admin/deploys" className="label link-underline">
+              Deploys
             </Link>
             <Link href="/" className="label link-underline" style={{ color: "var(--text-3)" }}>
               View site ↗

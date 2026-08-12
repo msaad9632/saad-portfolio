@@ -1,22 +1,36 @@
 "use client";
 
-import { useState } from "react";
-import { saveProject } from "./actions";
+import { useState, useTransition } from "react";
+import { saveProject, removeProject, moveProject, type SaveResult } from "./actions";
 import type { Project } from "@/lib/schema";
 
-export default function ProjectForm({ project }: { project: Project }) {
+export default function ProjectForm({ project, index, total }: { project: Project; index: number; total: number }) {
   const [status, setStatus] = useState<"idle" | "saving" | "saved" | "error">("idle");
   const [error, setError] = useState("");
+  const [pending, startTransition] = useTransition();
 
-  async function onSubmit(formData: FormData) {
-    setStatus("saving");
-    const result = await saveProject(project.slug, formData);
-    if (result.ok) {
-      setStatus("saved");
-    } else {
+  function handleResult(result: SaveResult) {
+    if (result.ok) setStatus("saved");
+    else {
       setStatus("error");
       setError(result.error);
     }
+  }
+
+  async function onSubmit(formData: FormData) {
+    setStatus("saving");
+    handleResult(await saveProject(project.slug, formData));
+  }
+
+  function onMove(direction: -1 | 1) {
+    setStatus("saving");
+    startTransition(async () => handleResult(await moveProject(project.slug, direction)));
+  }
+
+  function onRemove() {
+    if (!confirm(`Remove "${project.name}"? This commits immediately.`)) return;
+    setStatus("saving");
+    startTransition(async () => handleResult(await removeProject(project.slug)));
   }
 
   return (
@@ -25,9 +39,28 @@ export default function ProjectForm({ project }: { project: Project }) {
       className="mb-6 rounded-sm p-6"
       style={{ border: "1px solid var(--hairline)", background: "rgba(255,255,255,0.015)" }}
     >
-      <p className="label mb-4" style={{ color: "var(--text-3)" }}>
-        {project.slug}
-      </p>
+      <div className="mb-4 flex items-center justify-between">
+        <p className="label" style={{ color: "var(--text-3)" }}>
+          {project.slug}
+        </p>
+        <div className="flex gap-3">
+          <button type="button" disabled={index === 0 || pending} onClick={() => onMove(-1)} className="label" style={{ color: "var(--text-3)" }}>
+            ↑ Up
+          </button>
+          <button
+            type="button"
+            disabled={index === total - 1 || pending}
+            onClick={() => onMove(1)}
+            className="label"
+            style={{ color: "var(--text-3)" }}
+          >
+            ↓ Down
+          </button>
+          <button type="button" disabled={pending} onClick={onRemove} className="label" style={{ color: "#f87171" }}>
+            Remove
+          </button>
+        </div>
+      </div>
 
       <label className="mb-3 block">
         <span className="label mb-1 block" style={{ color: "var(--text-3)" }}>
@@ -62,6 +95,16 @@ export default function ProjectForm({ project }: { project: Project }) {
           Stack (comma-separated)
         </span>
         <input name="stack" defaultValue={project.stack.join(", ")} className="admin-input" />
+      </label>
+
+      <label className="mb-3 block">
+        <span className="label mb-1 block" style={{ color: "var(--text-3)" }}>
+          Card size
+        </span>
+        <select name="size" defaultValue={project.size ?? "md"} className="admin-input">
+          <option value="lg">Large (full-width, with description)</option>
+          <option value="md">Medium (paired)</option>
+        </select>
       </label>
 
       <label className="mb-3 block">
