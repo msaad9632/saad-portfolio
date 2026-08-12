@@ -28,7 +28,7 @@ async function fetchRepos(): Promise<Repo[] | null> {
     });
     if (!res.ok) return null;
     const data = (await res.json()) as Repo[];
-    return data.filter((r) => !r.fork);
+    return data.filter((r) => !r.fork && r.name !== "saad-portfolio");
   } catch {
     return null;
   }
