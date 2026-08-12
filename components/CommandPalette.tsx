@@ -58,7 +58,7 @@ export default function CommandPalette({ projects }: { projects: { name: string;
         type="button"
         onClick={() => setOpen(true)}
         aria-label="Open command palette"
-        className="label inline-flex h-8 w-8 items-center justify-center rounded-full !text-[var(--text-2)] transition-colors hover:!text-[var(--text)]"
+        className="label inline-flex h-10 w-10 items-center justify-center rounded-full !text-[var(--text-2)] transition-colors hover:!text-[var(--text)]"
         style={{ border: "1px solid var(--hairline)" }}
       >
         <svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
