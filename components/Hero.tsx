@@ -5,7 +5,7 @@ export default function Hero() {
 
   return (
     <section id="top" className="relative h-[100svh] w-full">
-      <div className="layer flex h-full flex-col justify-center px-8 pt-24 sm:px-14">
+      <div className="layer scrim flex h-full flex-col justify-center px-8 pt-24 sm:px-14">
         <div className="max-w-[34rem]">
           {hero.available && (
             <div
