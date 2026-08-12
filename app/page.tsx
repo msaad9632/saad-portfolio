@@ -2,6 +2,7 @@ import HeroFilamentClient from "@/components/HeroFilamentClient";
 import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
 import Work from "@/components/Work";
+import Skills from "@/components/Skills";
 import About from "@/components/About";
 import Experience from "@/components/Experience";
 import GitHubActivity from "@/components/GitHubActivity";
@@ -21,6 +22,7 @@ export default function Home() {
       <main className="relative">
         <Hero />
         <Work />
+        <Skills />
         <About />
         <Experience />
         <GitHubActivity />

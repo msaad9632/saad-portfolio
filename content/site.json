@@ -5,6 +5,7 @@
   },
   "hero": {
     "eyebrow": "Software Engineer",
+    "available": true,
     "headlineLines": ["Muhammad Saad —", "software engineer,", "AI/ML & backend."],
     "accentLineIndex": 1,
     "subCopy": "Extraction pipelines that score their own confidence. Financial software verified by arithmetic, not trust.",
@@ -28,6 +29,12 @@
     "linkedin": "https://www.linkedin.com/in/muhammad-saad-492853407/",
     "locationLine": "Muhammad Saad · Lahore, Pakistan"
   },
+  "skills": [
+    { "category": "languages", "items": ["Python", "TypeScript", "JavaScript", "SQL", "C++"] },
+    { "category": "frameworks", "items": ["FastAPI", "Next.js", "React", "Node.js", "Express"] },
+    { "category": "ai-ml", "items": ["MediaPipe", "TensorFlow.js", "Pydantic v2", "PyMuPDF"] },
+    { "category": "tools", "items": ["Git", "GitHub", "Vercel", "Docker", "Playwright"] }
+  ],
   "heroVisual": {
     "rings": 210,
     "ringsMobile": 90,

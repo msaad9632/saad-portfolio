@@ -8,6 +8,7 @@
     "stack": ["Python", "FastAPI", "Playwright", "Trafilatura", "Selectolax", "PyMuPDF", "Pydantic v2"],
     "repo": "https://github.com/msaad9632/ai_extraction_service",
     "featured": true,
+    "size": "lg",
     "images": ["/work/extract/hero.webp", "/work/extract/result.webp"]
   },
   {
@@ -19,7 +20,8 @@
     "stack": ["HTML", "WebCrypto", "LocalStorage", "RTL / Urdu"],
     "repo": "https://github.com/msaad9632/equipment-ledger",
     "featured": true,
-    "images": ["/work/ledger/machine-card.webp", "/work/ledger/split-payment.webp"]
+    "size": "md",
+    "images": ["/work/ledger/dashboard.webp", "/work/ledger/urdu.webp", "/work/ledger/invoice.webp"]
   },
   {
     "slug": "quicksign",
@@ -30,8 +32,9 @@
     "stack": ["Next.js", "TypeScript", "MediaPipe Hands", "TensorFlow.js"],
     "live": "https://aslgame.vercel.app/",
     "featured": true,
+    "size": "lg",
     "note": "Built in collaboration — no public repo under my account.",
-    "images": ["/work/quicksign/home.webp", "/work/quicksign/signcoach.webp"]
+    "images": ["/work/quicksign/desktop.webp", "/work/quicksign/mobile.webp", "/work/quicksign/signcoach.webp"]
   },
   {
     "slug": "dinesync",
@@ -42,6 +45,8 @@
     "stack": ["Node.js", "Express", "SQL Server", "Postgres"],
     "live": "https://dinesync-chi.vercel.app",
     "repo": "https://github.com/msaad9632/dinesync",
-    "featured": false
+    "featured": false,
+    "size": "md",
+    "images": ["/work/dinesync/dashboard.webp", "/work/dinesync/reservations.webp"]
   }
 ]

@@ -15,6 +15,7 @@ export const projectSchema = z.object({
   featured: z.boolean().optional(),
   note: z.string().optional(),
   images: z.array(z.string().min(1)).optional(),
+  size: z.enum(["lg", "md"]).optional(),
 });
 export type Project = z.infer<typeof projectSchema>;
 export const projectsSchema = z.array(projectSchema);
@@ -48,6 +49,7 @@ export const siteSchema = z.object({
   }),
   hero: z.object({
     eyebrow: z.string().min(1),
+    available: z.boolean().optional(),
     headlineLines: z.array(z.string().min(1)),
     accentLineIndex: z.number().int().nonnegative(),
     subCopy: z.string().min(1),
@@ -67,6 +69,7 @@ export const siteSchema = z.object({
     linkedin: z.string().url(),
     locationLine: z.string().min(1),
   }),
+  skills: z.array(z.object({ category: z.string().min(1), items: z.array(z.string().min(1)) })).optional(),
   heroVisual: heroVisualSchema,
 });
 export type Site = z.infer<typeof siteSchema>;

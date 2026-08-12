@@ -55,19 +55,18 @@ export default async function ProjectPage({ params }: PageProps<"/work/[slug]">)
         </p>
 
         {project.images && project.images.length > 0 && (
-          <div className="mb-10 flex max-w-[62rem] flex-wrap gap-4">
+          <div className="mb-10 grid max-w-[62rem] grid-cols-1 gap-4 sm:grid-cols-2">
             {project.images.map((src) => (
               <div
                 key={src}
-                className="overflow-hidden rounded-sm"
-                style={{ border: "1px solid var(--hairline)" }}
+                className="relative aspect-[4/3] overflow-hidden rounded-sm"
+                style={{ border: "1px solid var(--hairline)", background: "rgba(255,255,255,0.03)" }}
               >
                 <Image
                   src={src}
                   alt={`${project.name} screenshot`}
-                  width={480}
-                  height={320}
-                  className="h-auto max-h-[420px] w-auto"
+                  fill
+                  className="object-contain"
                   unoptimized
                 />
               </div>

@@ -1,6 +1,8 @@
+import ThemeToggle from "./ThemeToggle";
+
 export default function Nav() {
   return (
-    <header className="fixed top-0 left-0 right-0 z-30 px-8 py-7 sm:px-14 sm:py-9">
+    <header className="fixed top-0 left-0 right-0 z-30 px-8 py-5 backdrop-blur-sm sm:px-14 sm:py-7" style={{ background: "rgba(var(--bg-rgb), 0.55)" }}>
       <nav className="flex items-center justify-between">
         <a href="#top" className="label !text-[var(--text)] !tracking-[0.22em]">
           Saad
@@ -8,6 +10,7 @@ export default function Nav() {
         <ul className="flex items-center gap-8 sm:gap-14">
           {[
             ["Work", "#work"],
+            ["Skills", "#skills"],
             ["About", "#about"],
             ["Contact", "#contact"],
           ].map(([label, href]) => (
@@ -17,6 +20,9 @@ export default function Nav() {
               </a>
             </li>
           ))}
+          <li>
+            <ThemeToggle />
+          </li>
         </ul>
       </nav>
     </header>

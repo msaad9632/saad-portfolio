@@ -32,11 +32,23 @@ export default async function GitHubActivity() {
       <Reveal>
         <p className="label mb-3">GitHub Activity</p>
         <h2
-          className="mb-20 max-w-[18ch] font-semibold tracking-tight"
+          className="mb-12 max-w-[18ch] font-semibold tracking-tight"
           style={{ fontSize: "var(--t-section)", lineHeight: 1.1, letterSpacing: "-0.03em" }}
         >
           What&apos;s pushed recently.
         </h2>
+
+        <div className="mb-16 max-w-[52rem] overflow-x-auto rounded-sm" style={{ border: "1px solid var(--hairline)" }}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="https://ghchart.rshah.org/8b95d9/msaad9632"
+            alt="msaad9632 GitHub contribution graph"
+            width={722}
+            height={112}
+            className="block w-full min-w-[600px]"
+            loading="lazy"
+          />
+        </div>
 
         {!repos || repos.length === 0 ? (
           <p className="max-w-[42ch] text-[0.95rem] leading-relaxed" style={{ color: "var(--text-2)" }}>
