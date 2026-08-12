@@ -67,6 +67,11 @@ body {
   outline: 1px solid var(--accent);
 }
 
+button:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
 .hero-line {
   display: block;
   font-size: var(--t-hero);
