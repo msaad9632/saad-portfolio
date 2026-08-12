@@ -17,17 +17,6 @@
   --e-out: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-:root[data-theme="light"] {
-  color-scheme: light;
-
-  --bg: #f6f6f4;
-  --bg-rgb: 246, 246, 244;
-  --text: #14151a;
-  --text-2: #55585f;
-  --text-3: #85888f;
-  --hairline: rgba(0, 0, 0, 0.1);
-}
-
 @theme inline {
   --color-bg: var(--bg);
   --color-text: var(--text);

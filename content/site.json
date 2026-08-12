@@ -8,7 +8,7 @@
     "available": true,
     "headlineLines": ["Muhammad Saad —", "software engineer,", "AI/ML & backend."],
     "accentLineIndex": 1,
-    "subCopy": "Extraction pipelines that score their own confidence. Financial software verified by arithmetic, not trust.",
+    "subCopy": "I build the systems behind AI apps: an API that pulls clean data from any webpage, sign-language recognition that runs entirely in your browser, and bookkeeping software that shows its own math.",
     "ctaLabel": "Explore Work",
     "ctaHref": "#work"
   },

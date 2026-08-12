@@ -1,15 +1,10 @@
-import type { CSSProperties } from "react";
 import { getSite } from "@/lib/content";
 
 export default function Hero() {
   const { hero } = getSite();
 
   return (
-    <section
-      id="top"
-      className="relative h-[100svh] w-full"
-      style={{ "--text": "#f2f3f5", "--text-2": "#8a8f98", "--text-3": "#5f646d" } as CSSProperties}
-    >
+    <section id="top" className="relative h-[100svh] w-full">
       <div className="layer flex h-full flex-col justify-center px-8 pt-24 sm:px-14">
         <div className="max-w-[34rem]">
           {hero.available && (
@@ -55,7 +50,7 @@ export default function Hero() {
         </div>
       </div>
 
-      <div className="layer absolute bottom-9 left-8 flex flex-col items-center gap-3 sm:left-14">
+      <div className="layer absolute bottom-16 left-8 flex flex-col items-center gap-3 sm:left-14">
         <p className="label" style={{ color: "var(--text-3)" }}>
           Scroll
         </p>

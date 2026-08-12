@@ -15,6 +15,7 @@ export const projectSchema = z.object({
   featured: z.boolean().optional(),
   note: z.string().optional(),
   images: z.array(z.string().min(1)).optional(),
+  video: z.string().min(1).optional(),
   size: z.enum(["lg", "md"]).optional(),
 });
 export type Project = z.infer<typeof projectSchema>;

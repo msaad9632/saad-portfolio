@@ -28,20 +28,31 @@ export default function Work() {
                 style={{ border: "1px solid var(--hairline)", background: "rgba(255,255,255,0.015)" }}
               >
                 <div className={big ? "grid lg:grid-cols-[1.1fr_1fr]" : ""}>
-                  {p.images && p.images.length > 0 && (
-                    <Link
-                      href={`/work/${p.slug}`}
-                      className={`relative block w-full ${big ? "aspect-[16/10] lg:aspect-auto" : "aspect-[4/3]"}`}
-                      style={{ background: "rgba(255,255,255,0.03)" }}
-                    >
-                      <Image
-                        src={p.images[0]}
-                        alt={`${p.name} screenshot`}
-                        fill
-                        className="object-contain"
-                        unoptimized
-                      />
-                    </Link>
+                  {p.video ? (
+                    <video
+                      src={p.video}
+                      controls
+                      playsInline
+                      className={`w-full ${big ? "aspect-[16/10] lg:aspect-auto lg:h-full" : "aspect-[4/3]"} object-contain`}
+                      style={{ background: "#000" }}
+                    />
+                  ) : (
+                    p.images &&
+                    p.images.length > 0 && (
+                      <Link
+                        href={`/work/${p.slug}`}
+                        className={`relative block w-full ${big ? "aspect-[16/10] lg:aspect-auto" : "aspect-[4/3]"}`}
+                        style={{ background: "rgba(255,255,255,0.03)" }}
+                      >
+                        <Image
+                          src={p.images[0]}
+                          alt={`${p.name} screenshot`}
+                          fill
+                          className="object-contain"
+                          unoptimized
+                        />
+                      </Link>
+                    )
                   )}
 
                   <div className={big ? "flex flex-col justify-center p-8 sm:p-10" : "p-6 sm:p-8"}>
@@ -65,21 +76,7 @@ export default function Work() {
                       </span>
                     </div>
 
-                    <p className="mb-4 max-w-[42ch] leading-snug" style={{ color: "var(--text)", fontSize: big ? "1.125rem" : "1rem" }}>
-                      {p.oneLiner}
-                    </p>
-
-                    {big && (
-                      <p className="mb-6 max-w-[56ch] text-[0.95rem] leading-relaxed" style={{ color: "var(--text-2)" }}>
-                        {p.description}
-                      </p>
-                    )}
-
-                    <p className="label mb-6" style={{ color: "var(--text-3)" }}>
-                      {p.stack.join("  ·  ")}
-                    </p>
-
-                    <div className="mt-auto flex flex-wrap items-center gap-x-8 gap-y-3">
+                    <div className="mb-5 flex flex-wrap items-center gap-x-7 gap-y-2">
                       <Link
                         href={`/work/${p.slug}`}
                         className="group/cta label link-underline inline-flex items-center gap-3 !text-[var(--text)]"
@@ -113,8 +110,31 @@ export default function Work() {
                         </a>
                       )}
                     </div>
+
+                    <p className="mb-4 max-w-[42ch] leading-snug" style={{ color: "var(--text)", fontSize: big ? "1.125rem" : "1rem" }}>
+                      {p.oneLiner}
+                    </p>
+
+                    {big && (
+                      <p className="mb-6 max-w-[56ch] text-[0.95rem] leading-relaxed" style={{ color: "var(--text-2)" }}>
+                        {p.description}
+                      </p>
+                    )}
+
+                    <div className="flex flex-wrap gap-2">
+                      {p.stack.map((s) => (
+                        <span
+                          key={s}
+                          className="label rounded-full px-2.5 py-1"
+                          style={{ border: "1px solid var(--hairline)", color: "var(--text-3)" }}
+                        >
+                          {s}
+                        </span>
+                      ))}
+                    </div>
+
                     {p.note && (
-                      <span className="label mt-3" style={{ color: "var(--text-3)" }}>
+                      <span className="label mt-4 block" style={{ color: "var(--text-3)" }}>
                         {p.note}
                       </span>
                     )}

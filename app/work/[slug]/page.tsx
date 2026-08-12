@@ -36,45 +36,13 @@ export default async function ProjectPage({ params }: PageProps<"/work/[slug]">)
           {project.role}
         </p>
         <h1
-          className="mb-8 max-w-[24ch] font-semibold tracking-tight"
+          className="mb-6 max-w-[24ch] font-semibold tracking-tight"
           style={{ fontSize: "var(--t-section)", lineHeight: 1.1, letterSpacing: "-0.03em" }}
         >
           {project.name}
         </h1>
 
-        <p className="mb-10 max-w-[42ch] text-lg leading-snug" style={{ color: "var(--text)" }}>
-          {project.oneLiner}
-        </p>
-
-        <p className="mb-10 max-w-[62ch] text-[0.95rem] leading-relaxed" style={{ color: "var(--text-2)" }}>
-          {project.description}
-        </p>
-
-        <p className="label mb-10" style={{ color: "var(--text-3)" }}>
-          {project.stack.join("  ·  ")}
-        </p>
-
-        {project.images && project.images.length > 0 && (
-          <div className="mb-10 grid max-w-[62rem] grid-cols-1 gap-4 sm:grid-cols-2">
-            {project.images.map((src) => (
-              <div
-                key={src}
-                className="relative aspect-[4/3] overflow-hidden rounded-sm"
-                style={{ border: "1px solid var(--hairline)", background: "rgba(255,255,255,0.03)" }}
-              >
-                <Image
-                  src={src}
-                  alt={`${project.name} screenshot`}
-                  fill
-                  className="object-contain"
-                  unoptimized
-                />
-              </div>
-            ))}
-          </div>
-        )}
-
-        <div className="flex flex-wrap items-center gap-x-10 gap-y-3">
+        <div className="mb-10 flex flex-wrap items-center gap-x-10 gap-y-3">
           {project.live && (
             <a
               href={project.live}
@@ -104,6 +72,55 @@ export default async function ProjectPage({ params }: PageProps<"/work/[slug]">)
             </span>
           )}
         </div>
+
+        <p className="mb-10 max-w-[42ch] text-lg leading-snug" style={{ color: "var(--text)" }}>
+          {project.oneLiner}
+        </p>
+
+        <p className="mb-10 max-w-[62ch] text-[0.95rem] leading-relaxed" style={{ color: "var(--text-2)" }}>
+          {project.description}
+        </p>
+
+        <div className="mb-10 flex flex-wrap gap-2">
+          {project.stack.map((s) => (
+            <span
+              key={s}
+              className="label rounded-full px-2.5 py-1"
+              style={{ border: "1px solid var(--hairline)", color: "var(--text-3)" }}
+            >
+              {s}
+            </span>
+          ))}
+        </div>
+
+        {project.video && (
+          <div
+            className="mb-4 max-w-[24rem] overflow-hidden rounded-sm"
+            style={{ border: "1px solid var(--hairline)" }}
+          >
+            <video src={project.video} controls playsInline className="block w-full" style={{ background: "#000" }} />
+          </div>
+        )}
+
+        {project.images && project.images.length > 0 && (
+          <div className="mb-10 grid max-w-[62rem] grid-cols-1 gap-4 sm:grid-cols-2">
+            {project.images.map((src) => (
+              <div
+                key={src}
+                className="relative aspect-[4/3] overflow-hidden rounded-sm"
+                style={{ border: "1px solid var(--hairline)", background: "rgba(255,255,255,0.03)" }}
+              >
+                <Image
+                  src={src}
+                  alt={`${project.name} screenshot`}
+                  fill
+                  className="object-contain"
+                  unoptimized
+                />
+              </div>
+            ))}
+          </div>
+        )}
       </main>
     </>
   );

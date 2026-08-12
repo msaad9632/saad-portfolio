@@ -38,13 +38,13 @@ export default async function GitHubActivity() {
           What&apos;s pushed recently.
         </h2>
 
-        <div className="mb-16 max-w-[52rem] overflow-x-auto rounded-sm" style={{ border: "1px solid var(--hairline)" }}>
+        <div className="mb-16 max-w-[52rem] overflow-x-auto rounded-sm" style={{ border: "1px solid var(--hairline)", background: "#0d1117" }}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="https://ghchart.rshah.org/8b95d9/msaad9632"
-            alt="msaad9632 GitHub contribution graph"
+            src="https://github-readme-activity-graph.vercel.app/graph?username=msaad9632&theme=github-dark&bg_color=00000000&color=2ecc71&line=2ecc71&point=ffffff&area=true&area_color=2ecc71&hide_border=true&hide_title=true"
+            alt="msaad9632 GitHub activity graph"
             width={722}
-            height={112}
+            height={220}
             className="block w-full min-w-[600px]"
             loading="lazy"
           />

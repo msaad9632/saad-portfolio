@@ -16,5 +16,17 @@
     "what": "BSc Computer Science",
     "where": "FAST-NUCES, Lahore",
     "note": "Currently enrolled."
+  },
+  {
+    "when": "Completed",
+    "what": "A-Levels",
+    "where": "Pre-university",
+    "note": "Physics, Chemistry, and Mathematics."
+  },
+  {
+    "when": "Completed",
+    "what": "O-Levels",
+    "where": "Secondary school",
+    "note": "A* in Physics; A in Chemistry, Computer Science, Mathematics, and Urdu."
   }
 ]

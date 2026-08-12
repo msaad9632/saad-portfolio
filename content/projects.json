@@ -34,7 +34,8 @@
     "featured": true,
     "size": "lg",
     "note": "Built in collaboration — no public repo under my account.",
-    "images": ["/work/quicksign/desktop.webp", "/work/quicksign/mobile.webp", "/work/quicksign/signcoach.webp"]
+    "video": "/work/quicksign/brag.mp4",
+    "images": ["/work/quicksign/desktop.webp", "/work/quicksign/signcoach.webp"]
   },
   {
     "slug": "dinesync",
