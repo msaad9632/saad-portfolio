@@ -26,6 +26,7 @@ export const experienceEntrySchema = z.object({
   what: z.string().min(1),
   where: z.string().min(1),
   note: z.string().min(1),
+  type: z.enum(["work", "education"]).default("work"),
 });
 export type ExperienceEntry = z.infer<typeof experienceEntrySchema>;
 export const experienceSchema = z.array(experienceEntrySchema);

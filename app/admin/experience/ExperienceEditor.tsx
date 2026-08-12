@@ -72,6 +72,15 @@ function EntryRow({ entry, index, total }: { entry: ExperienceEntry; index: numb
 
       <label className="mb-3 block">
         <span className="label mb-1 block" style={{ color: "var(--text-3)" }}>
+          Type
+        </span>
+        <select name="type" defaultValue={entry.type} className="admin-input">
+          <option value="work">Experience</option>
+          <option value="education">Education</option>
+        </select>
+      </label>
+      <label className="mb-3 block">
+        <span className="label mb-1 block" style={{ color: "var(--text-3)" }}>
           When (tag, e.g. &quot;SINCE ~JULY 2026&quot;)
         </span>
         <input name="when" defaultValue={entry.when} className="admin-input" />
@@ -133,6 +142,10 @@ function AddEntryForm() {
       <p className="label mb-4" style={{ color: "var(--text-3)" }}>
         Add new entry
       </p>
+      <select aria-label="Type" name="type" defaultValue="work" className="admin-input mb-3">
+        <option value="work">Experience</option>
+        <option value="education">Education</option>
+      </select>
       <input aria-label="When" name="when" placeholder="When" className="admin-input mb-3" />
       <input aria-label="What" name="what" placeholder="What" className="admin-input mb-3" />
       <input aria-label="Where" name="where" placeholder="Where" className="admin-input mb-3" />

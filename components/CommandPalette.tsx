@@ -16,6 +16,7 @@ export default function CommandPalette({ projects }: { projects: { name: string;
       { label: "Skills", href: "/#skills", hint: "section" },
       { label: "About", href: "/#about", hint: "section" },
       { label: "Experience", href: "/#experience", hint: "section" },
+      { label: "Education", href: "/#education", hint: "section" },
       { label: "GitHub Activity", href: "/#github", hint: "section" },
       { label: "Contact", href: "/#contact", hint: "section" },
       ...projects.map((p) => ({ label: p.name, href: `/work/${p.slug}`, hint: "project" })),

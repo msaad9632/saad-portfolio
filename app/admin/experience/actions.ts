@@ -37,6 +37,7 @@ export async function updateEntry(index: number, formData: FormData): Promise<Sa
     what: String(formData.get("what") ?? ""),
     where: String(formData.get("where") ?? ""),
     note: String(formData.get("note") ?? ""),
+    type: formData.get("type") === "education" ? "education" : "work",
   };
   return saveExperience(entries, `admin: update experience entry ${index}`);
 }
@@ -48,6 +49,7 @@ export async function addEntry(formData: FormData): Promise<SaveResult> {
     what: String(formData.get("what") ?? ""),
     where: String(formData.get("where") ?? ""),
     note: String(formData.get("note") ?? ""),
+    type: formData.get("type") === "education" ? "education" : "work",
   });
   return saveExperience(entries, "admin: add experience entry");
 }

@@ -19,6 +19,7 @@ export default function Nav() {
             ["Skills", "#skills"],
             ["About", "#about"],
             ["Experience", "#experience"],
+            ["Education", "#education"],
             ["Contact", "#contact"],
           ].map(([label, href]) => (
             <li key={href} className="hidden sm:block">
