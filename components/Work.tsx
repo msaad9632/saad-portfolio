@@ -113,15 +113,6 @@ export default function Work() {
                           Source ↗
                         </a>
                       )}
-                      {p.repo && (
-                        <iframe
-                          src={`https://ghbtns.com/github-btn.html?user=msaad9632&repo=${p.repo.split("/").pop()}&type=star&count=true`}
-                          width={90}
-                          height={20}
-                          title={`Star ${p.name} on GitHub`}
-                          style={{ border: "none", colorScheme: "light" }}
-                        />
-                      )}
                     </div>
 
                     <p className="mb-4 max-w-[42ch] leading-snug" style={{ color: "var(--text)", fontSize: big ? "1.125rem" : "1rem" }}>

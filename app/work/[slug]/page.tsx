@@ -67,15 +67,6 @@ export default async function ProjectPage({ params }: PageProps<"/work/[slug]">)
               Source ↗
             </a>
           )}
-          {project.repo && (
-            <iframe
-              src={`https://ghbtns.com/github-btn.html?user=msaad9632&repo=${project.repo.split("/").pop()}&type=star&count=true`}
-              width={90}
-              height={20}
-              title={`Star ${project.name} on GitHub`}
-              style={{ border: "none", colorScheme: "light" }}
-            />
-          )}
           {project.note && (
             <span className="label" style={{ color: "var(--text-3)" }}>
               {project.note}

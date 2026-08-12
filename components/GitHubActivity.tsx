@@ -12,7 +12,13 @@ type Repo = {
 
 type Day = { date: string; count: number; level: number };
 
-const LEVEL_COLOR = ["#161b22", "#0e4429", "#006d32", "#26a641", "#39d353"];
+const LEVEL_COLOR = [
+  "rgba(255,255,255,0.05)",
+  "rgba(139,149,217,0.28)",
+  "rgba(139,149,217,0.5)",
+  "rgba(139,149,217,0.74)",
+  "#8b95d9",
+];
 
 async function fetchRepos(): Promise<Repo[] | null> {
   try {
@@ -76,7 +82,10 @@ export default async function GitHubActivity() {
         </div>
 
         {contributions && contributions.days.length > 0 && (
-          <div className="mb-16 max-w-[52rem] overflow-x-auto rounded-sm p-5" style={{ border: "1px solid var(--hairline)", background: "#0d1117" }}>
+          <div
+            className="mb-16 max-w-[52rem] overflow-x-auto rounded-sm p-5"
+            style={{ border: "1px solid var(--hairline)", background: "rgba(255,255,255,0.015)" }}
+          >
             <p className="label mb-4" style={{ color: "var(--text-2)" }}>
               {contributions.total} contributions in the last year
             </p>
@@ -132,13 +141,6 @@ export default async function GitHubActivity() {
                     )}
                   </div>
                   <div className="flex items-center gap-4 pt-1 sm:justify-end">
-                    <iframe
-                      src={`https://ghbtns.com/github-btn.html?user=msaad9632&repo=${r.name}&type=star&count=true`}
-                      width={90}
-                      height={20}
-                      title={`Star ${r.name} on GitHub`}
-                      style={{ border: "none", colorScheme: "light" }}
-                    />
                     <span className="label" style={{ color: "var(--text-3)" }}>
                       {new Date(r.pushed_at).toLocaleDateString("en-US", { month: "short", year: "numeric" })}
                     </span>
