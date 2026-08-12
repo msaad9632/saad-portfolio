@@ -1,0 +1,42 @@
+{
+  "seo": {
+    "title": "Muhammad Saad — Software Engineer",
+    "description": "I build systems that tell you when they've failed."
+  },
+  "hero": {
+    "eyebrow": "Software Engineer",
+    "headlineLines": ["Muhammad Saad —", "software engineer,", "AI/ML & backend."],
+    "accentLineIndex": 1,
+    "subCopy": "Extraction pipelines that score their own confidence. Financial software verified by arithmetic, not trust.",
+    "ctaLabel": "Explore Work",
+    "ctaHref": "#work"
+  },
+  "about": {
+    "eyebrow": "02 — About",
+    "heading": "The same decision, in five different systems.",
+    "paragraphs": [
+      "When a system can't do what it was asked, the interesting engineering question isn't how to make it succeed anyway — it's how to make the failure visible, specific, and impossible to mistake for success.",
+      "A parser that returns a bot wall as if it were an article, a sign-recognition model that scores a static pose as a moving sign, a tracking pipeline that applies a malformed status update: each of those is the same mistake wearing a different domain.",
+      "I'm an AI/ML intern at KnevaTech, I co-founded QuickSign with Abdur Rafay Khan, and I'm studying Computer Science at FAST-NUCES, Lahore."
+    ]
+  },
+  "contact": {
+    "eyebrow": "04 — Contact",
+    "heading": "Have something worth building?",
+    "email": "msaad9632@gmail.com",
+    "github": "https://github.com/msaad9632",
+    "linkedin": "https://www.linkedin.com/in/muhammad-saad-492853407/",
+    "locationLine": "Muhammad Saad · Lahore, Pakistan"
+  },
+  "heroVisual": {
+    "rings": 210,
+    "ringsMobile": 90,
+    "segments": 250,
+    "segmentsMobile": 140,
+    "maxRadius": 46,
+    "vortexStrength": 1,
+    "threadAlpha": 0.09,
+    "color": "#dfe6f2",
+    "rotationSpeed": 0.012
+  }
+}

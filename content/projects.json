@@ -1,0 +1,47 @@
+[
+  {
+    "slug": "extract",
+    "name": "extract",
+    "oneLiner": "URL to structured JSON, with a parser ladder that tells you when it gave up.",
+    "description": "A FastAPI service that turns arbitrary URLs into structured JSON. It falls back through trafilatura, then Playwright for JS-heavy pages, then readability, then selectolax, and returns 422 rather than silently handing back a bot wall as if it were an article. Every extraction ships a weighted confidence score instead of a boolean, and an SSRF gate blocks hosts that resolve to both a public and a private address — because you don't control which one the OS picks.",
+    "role": "Solo",
+    "stack": ["Python", "FastAPI", "Playwright", "Trafilatura", "Selectolax", "PyMuPDF", "Pydantic v2"],
+    "repo": "https://github.com/msaad9632/ai_extraction_service",
+    "featured": true,
+    "images": ["/work/extract/hero.webp", "/work/extract/result.webp"]
+  },
+  {
+    "slug": "ledger",
+    "name": "Ledger",
+    "oneLiner": "Bilingual EN/اردو bookkeeping for a heavy-equipment rental business.",
+    "description": "A single-file, no-build-step, no-dependency bookkeeping and invoicing tool for tracking rental machines, clients, and payments — in English and Urdu, properly right-to-left, not a translated string table bolted onto a left-to-right design. Data is encrypted client-side with WebCrypto AES-GCM 256 and a PBKDF2-derived key, stored in localStorage. The 6-digit PIN is deliberately excluded from protecting the cloud copy: it's offline-brute-forcible in about two minutes, and pretending otherwise would be worse than saying so.",
+    "role": "Solo",
+    "stack": ["HTML", "WebCrypto", "LocalStorage", "RTL / Urdu"],
+    "repo": "https://github.com/msaad9632/equipment-ledger",
+    "featured": true,
+    "images": ["/work/ledger/machine-card.webp", "/work/ledger/split-payment.webp"]
+  },
+  {
+    "slug": "quicksign",
+    "name": "QuickSign",
+    "oneLiner": "In-browser ASL learning game, verifying signs on-device.",
+    "description": "An in-browser American Sign Language learning game, co-founded with Abdur Rafay Khan. Recognition runs entirely on-device with MediaPipe hand landmarks feeding a Bi-GRU model trained on a custom dataset — the camera feed never leaves the device. The model is a veto-only layer: it can reject a sign as wrong but never unilaterally approve one. It was rebuilt around a rolling ~2-second movement window after an earlier version scored a static, motionless hand shape as a correct sign for \"coffee\" — that class of false positive is now structurally prevented.",
+    "role": "Co-founder, with Abdur Rafay Khan",
+    "stack": ["Next.js", "TypeScript", "MediaPipe Hands", "TensorFlow.js"],
+    "live": "https://aslgame.vercel.app/",
+    "featured": true,
+    "note": "Built in collaboration — no public repo under my account.",
+    "images": ["/work/quicksign/home.webp", "/work/quicksign/signcoach.webp"]
+  },
+  {
+    "slug": "dinesync",
+    "name": "DineSync",
+    "oneLiner": "Restaurant reservations, built to run on both a Windows dev box and Linux serverless.",
+    "description": "A restaurant table-reservation system with a dual database backend: SQL Server locally through the Windows-only msnodesqlv8 ODBC driver, and Postgres in production — the only one of the two that runs inside a Linux serverless function. That split is the actual engineering decision here, not a stack choice made for its own sake.",
+    "role": "Solo",
+    "stack": ["Node.js", "Express", "SQL Server", "Postgres"],
+    "live": "https://dinesync-chi.vercel.app",
+    "repo": "https://github.com/msaad9632/dinesync",
+    "featured": false
+  }
+]
