@@ -2,7 +2,8 @@ import { redirect } from "next/navigation";
 import { requireAdmin } from "@/lib/session";
 import { getSite } from "@/lib/content";
 import SaveForm from "./SaveForm";
-import { saveHero, saveAbout, saveContact, saveSkills } from "./actions";
+import SkillsEditor from "./SkillsEditor";
+import { saveHero, saveAbout, saveContact } from "./actions";
 
 export default async function AdminSite() {
   try {
@@ -137,17 +138,7 @@ export default async function AdminSite() {
         </label>
       </SaveForm>
 
-      <SaveForm title="Skills" action={saveSkills}>
-        {(site.skills ?? []).map((s, i) => (
-          <div key={i} className="mb-3 grid grid-cols-[8rem_1fr] gap-2">
-            <input name="category" defaultValue={s.category} className="admin-input" />
-            <input name="items" defaultValue={s.items.join(", ")} className="admin-input" placeholder="comma-separated" />
-          </div>
-        ))}
-        <p className="mt-2 text-xs" style={{ color: "var(--text-3)" }}>
-          Edit categories/items in place. To add or remove a whole category, ask in chat for now.
-        </p>
-      </SaveForm>
+      <SkillsEditor skills={site.skills} />
     </div>
   );
 }

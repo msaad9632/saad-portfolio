@@ -76,13 +76,15 @@ export async function saveSkills(formData: FormData): Promise<SaveResult> {
   return saveSite((site) => {
     const categories = formData.getAll("category") as string[];
     const items = formData.getAll("items") as string[];
-    site.skills = categories.map((category, i) => ({
-      category,
-      items: items[i]
-        .split(",")
-        .map((s) => s.trim())
-        .filter(Boolean),
-    }));
+    site.skills = categories
+      .map((category, i) => ({
+        category: category.trim(),
+        items: (items[i] ?? "")
+          .split(",")
+          .map((s) => s.trim())
+          .filter(Boolean),
+      }))
+      .filter((s) => s.category && s.items.length > 0);
   }, "admin: update skills");
 }
 
