@@ -16,8 +16,19 @@ const geistMono = Geist_Mono({
 const { seo } = getSite();
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://itssaad.vercel.app"),
   title: seo.title,
   description: seo.description,
+  openGraph: {
+    title: seo.title,
+    description: seo.description,
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: seo.title,
+    description: seo.description,
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
