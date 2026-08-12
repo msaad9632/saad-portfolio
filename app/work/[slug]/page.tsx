@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import Nav from "@/components/Nav";
+import Footer from "@/components/Footer";
 import { getProjects } from "@/lib/content";
 import type { Metadata } from "next";
 
@@ -66,6 +67,15 @@ export default async function ProjectPage({ params }: PageProps<"/work/[slug]">)
               Source ↗
             </a>
           )}
+          {project.repo && (
+            <iframe
+              src={`https://ghbtns.com/github-btn.html?user=msaad9632&repo=${project.repo.split("/").pop()}&type=star&count=true`}
+              width={90}
+              height={20}
+              title={`Star ${project.name} on GitHub`}
+              style={{ border: "none", colorScheme: "light" }}
+            />
+          )}
           {project.note && (
             <span className="label" style={{ color: "var(--text-3)" }}>
               {project.note}
@@ -107,21 +117,23 @@ export default async function ProjectPage({ params }: PageProps<"/work/[slug]">)
             {project.images.map((src) => (
               <div
                 key={src}
-                className="relative aspect-[4/3] overflow-hidden rounded-sm"
+                className="flex h-80 items-center justify-center overflow-hidden rounded-sm"
                 style={{ border: "1px solid var(--hairline)", background: "rgba(255,255,255,0.03)" }}
               >
                 <Image
                   src={src}
                   alt={`${project.name} screenshot`}
-                  fill
-                  className="object-contain"
+                  width={1200}
+                  height={1200}
                   unoptimized
+                  className="h-full w-auto object-contain"
                 />
               </div>
             ))}
           </div>
         )}
       </main>
+      <Footer />
     </>
   );
 }

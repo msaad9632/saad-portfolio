@@ -61,7 +61,11 @@ export default function CommandPalette({ projects }: { projects: { name: string;
         className="label inline-flex h-8 w-8 items-center justify-center rounded-full !text-[var(--text-2)] transition-colors hover:!text-[var(--text)]"
         style={{ border: "1px solid var(--hairline)" }}
       >
-        ⌘
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect x="1" y="1" width="14" height="14" rx="1.5" stroke="currentColor" strokeWidth="1.2" />
+          <path d="M3.5 4.5L6.5 8L3.5 11.5" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="M8 11.5H12.5" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" />
+        </svg>
       </button>
 
       {open && (
@@ -85,8 +89,10 @@ export default function CommandPalette({ projects }: { projects: { name: string;
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 placeholder="search sections, projects..."
-                className="flex-1 bg-transparent font-mono text-sm normal-case tracking-normal outline-none"
-                style={{ color: "#4ade80" }}
+                className="flex-1 rounded-sm bg-transparent px-1 font-mono text-sm normal-case tracking-normal focus:outline-none focus-visible:ring-2"
+                style={{ color: "#4ade80", boxShadow: "none" }}
+                onFocus={(e) => (e.currentTarget.style.boxShadow = "0 0 0 2px var(--accent)")}
+                onBlur={(e) => (e.currentTarget.style.boxShadow = "none")}
                 onKeyDown={(e) => {
                   if (e.key === "Enter" && filtered[0]) go(filtered[0].href);
                 }}

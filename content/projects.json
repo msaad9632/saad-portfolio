@@ -18,6 +18,7 @@
     "description": "A single-file, no-build-step, no-dependency bookkeeping and invoicing tool for tracking rental machines, clients, and payments — in English and Urdu, properly right-to-left, not a translated string table bolted onto a left-to-right design. Data is encrypted client-side with WebCrypto AES-GCM 256 and a PBKDF2-derived key, stored in localStorage. The 6-digit PIN is deliberately excluded from protecting the cloud copy: it's offline-brute-forcible in about two minutes, and pretending otherwise would be worse than saying so.",
     "role": "Solo",
     "stack": ["HTML", "WebCrypto", "LocalStorage", "RTL / Urdu"],
+    "live": "https://equipment-ledger-demo.vercel.app",
     "repo": "https://github.com/msaad9632/equipment-ledger",
     "featured": true,
     "size": "md",
