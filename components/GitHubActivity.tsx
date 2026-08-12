@@ -86,8 +86,13 @@ export default async function GitHubActivity() {
             className="mb-16 max-w-[52rem] overflow-x-auto rounded-sm p-5"
             style={{ border: "1px solid var(--hairline)", background: "rgba(255,255,255,0.015)" }}
           >
-            <p className="label mb-4" style={{ color: "var(--text-2)" }}>
-              {contributions.total} contributions in the last year
+            <p className="mb-4 flex items-baseline gap-3">
+              <span className="font-semibold tracking-tight" style={{ fontSize: "2rem", letterSpacing: "-0.03em" }}>
+                {contributions.total}
+              </span>
+              <span className="label" style={{ color: "var(--text-2)" }}>
+                contributions in the last year
+              </span>
             </p>
             <div className="flex gap-1">
               {toWeeks(contributions.days).map((week, wi) => (
